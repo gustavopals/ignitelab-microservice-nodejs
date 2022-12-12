@@ -5,6 +5,8 @@
 ### Tecnologias:
 
 1. nodejs
-2. prisma
-3. nestjs
-4. redis
+2. typescript
+3. prisma
+4. nestjs
+5. redis
+6. faker
