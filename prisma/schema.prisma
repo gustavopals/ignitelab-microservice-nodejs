@@ -1,3 +1,6 @@
+// rodar tabelas: npx prisma migrate dev
+// ver banco: npx prisma studio
+
 generator client {
     provider = "prisma-client-js"
 }
