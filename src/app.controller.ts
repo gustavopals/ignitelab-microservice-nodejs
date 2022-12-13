@@ -1,4 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
+import { randomUUID } from 'crypto';
 import { PrismaService } from './prisma.service';
 
 @Controller('notifications')
@@ -8,5 +9,17 @@ export class AppController {
   @Get()
   list() {
     return this.prisma.notification.findMany();
+  }
+
+  @Post()
+  async create() {
+    await this.prisma.notification.create({
+      data: {
+        id: randomUUID(),
+        content: 'Você tem uma nova solcitação de amizade!',
+        category: 'social',
+        recepientId: randomUUID(),
+      },
+    });
   }
 }
